@@ -1,0 +1,240 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-menu a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-right: 0.5rem;
+}
+
+.search-container button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #e5533d;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/knust.jpg') no-repeat center center/cover;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease;
+    color: #f4f4f4;  /* Ensuring text is white */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease 0.5s;
+    color: #fff;  /* Ensuring text is white */
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e5533d;
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* News, Articles, and Events */
+.news-item, .article-item, .event-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover, .article-item:hover, .event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-item img, .article-item img, .event-item img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.news-content, .article-content, .event-content {
+    flex: 1;
+}
+
+.news-content h3, .article-content h3, .event-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-content p, .article-content p, .event-content p {
+    margin-bottom: 0.5rem;
+}
+
+.news-content a, .article-content a, .event-content a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.news-content a:hover, .article-content a:hover, .event-content a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer-content {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content p, .footer-content a {
+    margin: 0.5rem 0;
+}
+
+.footer-content a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.newsletter {
+    margin-top: 1rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 1rem;
+}
+
+.newsletter button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.newsletter button:hover {
+    background-color: #e5533d;
+}
+
+/* Advanced Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

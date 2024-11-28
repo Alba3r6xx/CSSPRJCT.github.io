@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Society</title> 
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <title>Computer Science Society</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <h1>Computer Science Society</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Activities</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="membership.html">Join Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                     <div class="line"></div> 
+                     <div class="line"></div> 
+                     <div class="line"></div> 
+                </div>
+            
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button id="search-button">Search</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div id="three-background"></div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to the Computer Science Society</h2>
+                <p>Explore our events, resources, and more to enhance your computer science journey.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button">Learn More</button>
+                    <button class="cta-button" onclick="location.href='membership.html'">Join Us</button>
+                </div>
+            </div>
+        </section>
+        <section class="top-news">
+            <h2>Top News</h2>
+            <div class="news-item">
+                <img src="images/futureAI.jpg" alt="News 1">
+                <div class="news-content">
+                    <h3>Exciting New Development in AI</h3>
+                    <p>Discover the latest breakthrough in artificial intelligence and how it's shaping the future...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="images/challenge.jpg" alt="News 2">
+                <div class="news-content">
+                    <h3>Upcoming Hackathon at KNUST</h3>
+                    <p>Join the biggest hackathon event of the year at KNUST and showcase your skills...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+        <section class="featured-articles">
+            <h2>Featured Articles</h2>
+            <div class="article-item">
+                <img src="images/webdev.jpg" alt="Article 1">
+                <div class="article-content">
+                    <h3>The Future of Web Development</h3>
+                    <p>Explore the emerging trends and technologies in web development that you need to know...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="article-item">
+                <img src="images/python.jpg" alt="Article 2">
+                <div class="article-content">
+                    <h3>Mastering Data Science with Python</h3>
+                    <p>Learn the key concepts and techniques in data science using Python with our comprehensive guide...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+        <section class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="event-item">
+                <img src="images/cdsnip.jpg" alt="Event 1">
+                <div class="event-content">
+                    <h3>Annual Hackathon</h3>
+                    <p>Date: December 1, 2024</p>
+                    <p>Location: KNUST Auditorium</p>
+                    <a href="events.html">Learn More</a>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="images/futureAI.jpg" alt="Event 2">
+                <div class="event-content">
+                    <h3>Tech Talk: The Future of AI</h3>
+                    <p>Date: December 15, 2024</p>
+                    <p>Location: KNUST Science Park</p>
+                    <a href="events.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Computer Science Society, KNUST</p>
+            <p><a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
+            <div class="newsletter">
+                <p>Join our newsletter for the latest updates.</p>
+                <input type="email" placeholder="Enter your email" id="newsletter-email">
+                <button id="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

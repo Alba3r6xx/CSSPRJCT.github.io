@@ -1,0 +1,195 @@
+/* Membership Page Styles */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-menu a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-right: 0.5rem;
+}
+
+.search-container button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #e5533d;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/graduants.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease;
+    color: #fff;
+    height: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease 0.5s;
+    color: #fff;
+    height: 0.1rem;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 4rem 2rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background, slightly darker */
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure it's above the background animation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better visibility */
+}
+
+.benefits h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits ul li {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.benefits form {
+    background-color: rgba(255, 255, 255, 0.8); /* Ensure form background stands out */
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem; /* Add space between benefits and form */
+    position: relative;
+    z-index: 10; /* Ensure it's above the background animation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better visibility */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold; /* Emphasize label text */
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    font-size: 1rem; /* Make input text larger */
+}
+
+button[type="submit"] {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Add transform for hover effect */
+    font-size: 1rem; /* Make button text larger */
+}
+
+button[type="submit"]:hover {
+    background-color: #e5533d;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Benefits Details */
+.benefits-details {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.benefits-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefits-details p {
+    margin-bottom: 1rem;
+}
+
+.benefits-details ul {
+    list-style: disc[_{{{CITATION{{{_1{](https://github.com/Barito2/arkademy/tree/652b129ec7ef6458e19343b13624d57995a6f53b/6a%2Findex.php)[_{{{CITATION{{{_2{](https://github.com/DeveloperGlucosa/cidVid/tree/6fb73be2fa8de0a822fa74989efb5d4de3df2288/resources%2Fviews%2Flayouts%2Fguest.blade.php)[_{{{CITATION{{{_3{](https://github.com/Bruno-2Ln/Portfolio/tree/760fe662397278a06a305f9c6f83bbf9fe06012e/index.php)[_{{{CITATION{{{_4{](https://github.com/Mariamike/SubjectAllocation/tree/9f93252c6f4b66a5960753e80471f69223d55df6/register.php)[_{{{CITATION{{{_5{](https://github.com/alexandrastoica/conference-app/tree/236467b7dcda46889c3ac4a766e4ad44acdea6c0/pages%2Flogin.php)

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <title>Resources - Computer Science Society</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resources.css">
+    <script defer src="resources.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <h1>Computer Science Society</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Activities</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="membership.html">Join Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <div class="line"></div> 
+                    <div class="line"></div> 
+                    <div class="line"></div> 
+               </div>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero" style="background: url('images/medals.jpg') no-repeat center center/cover;">
+            <div class="hero-content">
+                <h2>Resources</h2>
+                <p>Explore a wealth of knowledge and tools to enhance your computer science skills.</p>
+            </div>
+        </section>
+        <section class="tutorials">
+            <h2>Tutorials</h2>
+            <div class="resource-item">
+                <img src="images/tutorial1.jpg" alt="Tutorial 1">
+                <div class="resource-content">
+                    <h3>Introduction to Web Development</h3>
+                    <p>Learn the basics of HTML, CSS, and JavaScript to build your first website.</p>
+                    <a href="#">Start Learning</a>
+                </div>
+            </div>
+            <div class="resource-item">
+                <img src="images/tutorial2.jpg" alt="Tutorial 2">
+                <div class="resource-content">
+                    <h3>Data Science with Python</h3>
+                    <p>Dive into data analysis and visualization with Python libraries like pandas and Matplotlib.</p>
+                    <a href="#">Start Learning</a>
+                </div>
+            </div>
+        </section>
+        <section class="articles">
+            <h2>Articles</h2>
+            <div class="resource-item">
+                <img src="images/article1.jpg" alt="Article 1">
+                <div class="resource-content">
+                    <h3>Understanding Machine Learning</h3>
+                    <p>An in-depth look at the concepts and applications of machine learning in various industries.</p>
+                    <a href="#">Read Article</a>
+                </div>
+            </div>
+            <div class="resource-item">
+                <img src="images/article2.jpg" alt="Article 2">
+                <div class="resource-content">
+                    <h3>Best Practices in Software Development</h3>
+                    <p>Discover the best practices for writing clean, maintainable, and efficient code.</p>
+                    <a href="#">Read Article</a>
+                </div>
+            </div>
+        </section>
+        <section class="tools">
+            <h2>Tools & Resources</h2>
+            <div class="resource-item">
+                <img src="images/tool1.jpg" alt="Tool 1">
+                <div class="resource-content">
+                    <h3>Code Editors</h3>
+                    <p>Explore the best code editors for developers, including VSCode, Sublime Text, and more.</p>
+                    <a href="#">Explore Tools</a>
+                </div>
+            </div>
+            <div class="resource-item">
+                <img src="images/tool2.jpg" alt="Tool 2">
+                <div class="resource-content">
+                    <h3>Version Control</h3>
+                    <p>Learn how to manage your code efficiently using Git and GitHub.</p>
+                    <a href="#">Explore Tools</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Computer Science Society, KNUST</p>
+            <p><a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
+            <div class="newsletter">
+                <p>Join our newsletter for the latest updates.</p>
+                <input type="email" placeholder="Enter your email" id="newsletter-email">
+                <button id="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

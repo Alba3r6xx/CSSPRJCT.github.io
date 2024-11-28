@@ -1,0 +1,104 @@
+/* Additional Styles for Events Page */
+/* Hero Section for Events Page */
+.hero {
+    background: url('images/studentsinclass.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+/* Events Sections */
+.upcoming-events, .past-events, .highlight-event {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.event-item, .event-highlight {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-item:hover, .event-highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-item img, .event-highlight img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.event-content, .highlight-content {
+    flex: 1;
+}
+
+.event-content h3, .highlight-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-content p, .highlight-content p {
+    margin-bottom: 0.5rem;
+}
+
+.event-content a, .highlight-content a, .highlight-content button {
+    color: #ff6347;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.event-content a:hover, .highlight-content a:hover, .highlight-content button:hover {
+    text-decoration: underline;
+}
+
+.highlight-event {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.highlight-event .highlight-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.highlight-event button {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.highlight-event button:hover {
+    background-color: #e5533d;
+}
+
