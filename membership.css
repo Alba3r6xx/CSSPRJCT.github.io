@@ -190,6 +190,103 @@ button[type="submit"]:hover {
 .benefits-details p {
     margin-bottom: 1rem;
 }
+/* Base styles for navigation */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu.nav-open {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger-menu .line {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+    }
+}
+
+/* Styles for smaller mobile screens */
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Ensure that all content is accessible on small screens */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    padding: 10px;
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+main {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
 
 .benefits-details ul {
     list-style: disc[_{{{CITATION{{{_1{](https://github.com/Barito2/arkademy/tree/652b129ec7ef6458e19343b13624d57995a6f53b/6a%2Findex.php)[_{{{CITATION{{{_2{](https://github.com/DeveloperGlucosa/cidVid/tree/6fb73be2fa8de0a822fa74989efb5d4de3df2288/resources%2Fviews%2Flayouts%2Fguest.blade.php)[_{{{CITATION{{{_3{](https://github.com/Bruno-2Ln/Portfolio/tree/760fe662397278a06a305f9c6f83bbf9fe06012e/index.php)[_{{{CITATION{{{_4{](https://github.com/Mariamike/SubjectAllocation/tree/9f93252c6f4b66a5960753e80471f69223d55df6/register.php)[_{{{CITATION{{{_5{](https://github.com/alexandrastoica/conference-app/tree/236467b7dcda46889c3ac4a766e4ad44acdea6c0/pages%2Flogin.php)
+        
