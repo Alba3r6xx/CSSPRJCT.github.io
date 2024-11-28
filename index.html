@@ -10,6 +10,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBV7FIV7CR5EcV9oyM6F3NJTYIn7VAPgdk",
+          authDomain: "alba-71fbd.firebaseapp.com",
+          projectId: "alba-71fbd",
+          storageBucket: "alba-71fbd.firebasestorage.app",
+          messagingSenderId: "933239448964",
+          appId: "1:933239448964:web:96373b53a8c1a250c1a9d1",
+          measurementId: "G-ZQHK8769F9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
     <title>Computer Science Society</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
