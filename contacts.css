@@ -23,7 +23,6 @@ header {
     left: 0;
     z-index: 1000;
 }
-
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -31,42 +30,116 @@ header {
     padding: 0 2rem;
 }
 
-nav ul {
+.nav-menu {
     list-style: none;
-    padding: 0;
     display: flex;
 }
 
-nav ul li {
-    margin: 0 10px;
+.nav-menu li {
+    margin: 0px;
 }
 
-nav ul li a {
+.nav-menu a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
     padding: 0.5rem 1rem;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background: #ff6347;
-    color: #fff;
+.nav-menu a:hover {
+    color: #ff6347;
     border-radius: 4px;
 }
 
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-container input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
     cursor: pointer;
 }
 
-.hamburger-menu .line {
+.search-container button:hover {
+    background-color: #e5533d;
+}
+
+hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.hamburger span {
+    display: block;
     width: 25px;
     height: 3px;
-    background: #fff;
-    margin: 3px 0;
-    transition: transform 0.3s ease;
+    margin: 5px;
+    background-color: #fff;
+    transition: all 0.3s;
 }
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+#category-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ensure the menu appears below the button */
+    right: 0; /* Align to the right edge */
+    background-color: #444;
+    color: white;
+    min-width: 200px; /* Adjust width if needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure it overlays other content */
+}
+
+#category-menu.show {
+    display: block;
+}
+
+#category-menu li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+}
+
+#category-menu li:hover {
+    background-color: #1343dd;
+}
+
 
 /* Contact Section */
 .contact {

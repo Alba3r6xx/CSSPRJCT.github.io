@@ -12,26 +12,40 @@
     <script defer src="events.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="nav-container">
-            <h1>Computer Science Society</h1>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="events.html">Activities</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="membership.html">Join Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+    <header class="header animate__animated animate__fadeInDown">
+        <div class="logo">
+            <h1>CSS</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="membership.html">Join Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search CSS or Type a URL">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="hamburger-menu">
+            <button id="hamburger-button" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div id="category-menu" class="category-menu" class="hide">
+                <!-- Your category menu content -->
+                <ul>
+                 <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="membership.html">Join Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 </ul>
-                <div class="hamburger-menu">
-                    <div class="line"></div> 
-                    <div class="line"></div> 
-                    <div class="line"></div> 
-               </div>
-            </nav>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search...">
-                <button id="search-button">Search</button>
             </div>
         </div>
     </header>

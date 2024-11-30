@@ -10,59 +10,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyBV7FIV7CR5EcV9oyM6F3NJTYIn7VAPgdk",
-          authDomain: "alba-71fbd.firebaseapp.com",
-          projectId: "alba-71fbd",
-          storageBucket: "alba-71fbd.firebasestorage.app",
-          messagingSenderId: "933239448964",
-          appId: "1:933239448964:web:96373b53a8c1a250c1a9d1",
-          measurementId: "G-ZQHK8769F9"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
     <title>Computer Science Society</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="nav-container">
-            <h1>Computer Science Society</h1>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="events.html">Activities</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="membership.html">Join Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+    <header class="header animate__animated animate__fadeInRight">
+        <div class="logo">
+            <h1>CSS</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="membership.html">Join Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search CSS or Type a URL">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="hamburger-menu">
+            <button id="hamburger-button" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div id="category-menu" class="category-menu" class="hide">
+                <!-- Your category menu content -->
+                <ul>
+                 <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="membership.html">Join Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 </ul>
-                <div class="hamburger-menu">
-                     <div class="line"></div> 
-                     <div class="line"></div> 
-                     <div class="line"></div> 
-                </div>
-            
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search...">
-                    <button id="search-button">Search</button>
-                </div>
-            </nav>
+            </div>
         </div>
     </header>
-    <div id="three-background"></div>
     <main>
         <section class="hero">
             <div class="hero-content">

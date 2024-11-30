@@ -14,14 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
         .addTo(controller);
     });
 
-    // Hamburger Menu Animation
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navMenu = document.querySelector('.nav-menu');
+   // Hamburger Menu Animation
+const hamburgerButton = document.getElementById('hamburger-button');
+const navMenu = document.querySelector('.nav-menu');  // You're not using this, but it's in the original code
+const categoryMenu = document.getElementById('category-menu'); // Or document.querySelector('.category-menu')
 
-    hamburgerMenu.addEventListener('click', () => {
-        navMenu.classList.toggle('nav-open');
-        gsap.fromTo(navMenu, {opacity: 0, y: -50}, {opacity: 1, y: 0, duration: 0.5});
-    });
+// Check if categoryMenu exists before adding event listener
+if (categoryMenu) {
+  hamburgerButton.addEventListener('click', () => {
+      categoryMenu.classList.toggle('show');
+      hamburgerButton.classList.toggle('active');
+  });
+} else {
+  console.error("Element with ID 'category-menu' not found.");
+  // Consider alternative action, e.g., showing a warning message to the user
+}
+
 
     // Search Functionality
     document.getElementById('search-button').addEventListener('click', () => {
@@ -30,28 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
         }
     });
-
-    // Three.js Background Animation
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true }); // transparent background
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('threejs-background').appendChild(renderer.domElement);
-
-    const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-    const material = new THREE.MeshBasicMaterial({ color: 0xff6347, wireframe: true });
-    const torusKnot = new THREE.Mesh(geometry, material);
-    scene.add(torusKnot);
-
-    camera.position.z = 50;
-
-    function animate() {
-        requestAnimationFrame(animate);
-        torusKnot.rotation.x += 0.01;
-        torusKnot.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-    animate();
 
     // Responsive Design Adjustments
     window.addEventListener('resize', () => {
