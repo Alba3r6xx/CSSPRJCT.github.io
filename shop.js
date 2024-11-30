@@ -180,3 +180,34 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCategories();
     displayProducts(products);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Toggle Cart Menu
+    const cartToggleBtn = document.querySelector('.header .cart-button');
+    const cart = document.querySelector('.cart');
+
+    if (cartToggleBtn && cart) {
+        cartToggleBtn.addEventListener('click', () => {
+            cart.classList.toggle('visible');
+        });
+    }
+
+    // Toggle Checkout Menu
+    const checkoutToggleBtn = document.getElementById('checkout-toggle');
+    const checkout = document.querySelector('.checkout');
+
+    if (checkoutToggleBtn && checkout) {
+        checkoutToggleBtn.addEventListener('click', () => {
+            checkout.classList.toggle('visible');
+        });
+    }
+
+    // Define the viewAllProducts function
+    function viewAllProducts() {
+        // Add your logic to display all products here
+        console.log('View all products');
+    }
+
+    // Make the function accessible globally
+    window.viewAllProducts = viewAllProducts;
+});

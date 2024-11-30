@@ -90,7 +90,7 @@ body {
     width: 160px;
 }
 
-.hamburger-menu {
+hamburger-menu {
     position: relative;
     display: inline-block;
 }
@@ -126,7 +126,7 @@ body {
 #category-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Ensure the menu appears below the button */
+    top: 100; /* Ensure the menu appears below the button */
     right: 0; /* Align to the right edge */
     background-color: #444;
     color: white;
@@ -240,8 +240,8 @@ body {
 .cart {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 100%;
+    right: -300px;
+    width: 250px;
     max-width: 400px;
     height: 100%;
     background: #333;
@@ -290,8 +290,8 @@ body {
 .checkout {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 100%;
+    right: -300px;
+    width: 250px;
     max-width: 400px;
     height: 100%;
     background: #444;
@@ -384,7 +384,7 @@ body {
 
     #category-menu {
         position: fixed;
-        top: 60px;
+        top: auto;
         right: 10px;
         min-width: 200px;
     }

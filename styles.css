@@ -14,12 +14,13 @@ body {
     color: white;
     padding: 10px 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(164, 62, 62, 0.2);
 }
 
 .nav-container {
@@ -78,7 +79,7 @@ body {
     background-color: #e5533d;
 }
 
-hamburger-menu {
+.hamburger-menu {
     position: relative;
     display: inline-block;
 }
@@ -140,35 +141,36 @@ hamburger-menu {
 }
 
 
-
 /* Hero Section */
-.hero {
-    background: url('images/knust.jpg') no-repeat center center/cover;
-    height: 150vh;
+ .hero { 
+    background: url('images/knust.jpg') no-repeat center center/cover; 
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center; 
+    color: #fff; 
+    padding: 40px 20px;
+} 
+.hero-content{ 
+    max-width: 600px; 
+} 
+.hero-text{ 
+    flex: 1;
 }
-
-.hero-content {
-    max-width: 600px;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 2s ease;
-    color: #f4f4f4;  /* Ensuring text is white */
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    animation: fadeIn 2s ease 0.5s;
-    color: #fff;  /* Ensuring text is white */
-}
+.hero-content h2 { 
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    animation: fadeIn 2s ease; 
+    color: #f4f4f4;
+ } 
+ .hero-content p {
+     font-size: 1rem;
+      margin-bottom: 2rem; 
+      animation: fadeIn 2s ease 0.5s; 
+      color: #fff;
+ }
 
 .cta-buttons {
     display: flex;
