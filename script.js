@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // GSAP and ScrollMagic Animations
     const controller = new ScrollMagic.Controller();
 
-    const elementsToAnimate = document.querySelectorAll('.hero-content, .news-item, .article-item, .event-item, .cta-buttons, .membership-form');
+    const elementsToAnimate = document.querySelectorAll('.hero-content, .news-item, .article-item, .event-item, .cta-buttons, .membership-form, .CSS-SHOP');
     
     elementsToAnimate.forEach(element => {
         new ScrollMagic.Scene({
@@ -57,7 +57,7 @@ if (categoryMenu) {
     });
 
     // Add hover animation to sections
-    const sections = document.querySelectorAll('.top-news, .featured-articles, .upcoming-events');
+    const sections = document.querySelectorAll('.top-news, .featured-articles, .upcoming-events, .CSS-SHOP');
     sections.forEach(section => {
         section.addEventListener('mouseover', () => {
             section.style.transform = 'translateY(-5px)';
@@ -118,4 +118,3 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('nav-open');
     });
 });
-

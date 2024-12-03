@@ -1,24 +1,28 @@
-/* Membership Page Styles */
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-    position: relative;
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Header */
-.header {
-    background-color: #000;
+body {
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(to right, #333, #555);
     color: #fff;
     padding: 1rem 0;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
-
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -32,30 +36,34 @@ body {
 }
 
 .nav-menu li {
-    margin: 0 10px;
+    margin: 0px;
 }
 
 .nav-menu a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
     padding: 0.5rem 1rem;
 }
 
 .nav-menu a:hover {
-    background-color: #555;
+    color: #ff6347;
     border-radius: 4px;
 }
 
 .search-container {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .search-container input {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: none;
-    margin-right: 0.5rem;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    width: 200px;
+    margin-right: 10px;
 }
 
 .search-container button {
@@ -71,124 +79,250 @@ body {
     background-color: #e5533d;
 }
 
-/* Hero Section */
-.hero {
-    background: url('images/graduants.jpg') no-repeat center center/cover;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-}
-
-.hero-content {
-    max-width: 600px;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 2s ease;
-    color: #fff;
-    height: 3rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    animation: fadeIn 2s ease 0.5s;
-    color: #fff;
-    height: 0.1rem;
-}
-
-/* Benefits Section */
-.benefits {
-    padding: 4rem 2rem;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background, slightly darker */
-    margin: 0 auto;
-    max-width: 1200px;
-    text-align: center;
+hamburger-menu {
     position: relative;
-    z-index: 1; /* Ensure it's above the background animation */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better visibility */
+    display: inline-block;
 }
 
-.benefits h2 {
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+#category-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ensure the menu appears below the button */
+    right: 0; /* Align to the right edge */
+    background-color: #444;
+    color: white;
+    min-width: 200px; /* Adjust width if needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure it overlays other content */
+}
+
+#category-menu.show {
+    display: block;
+}
+
+#category-menu li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+}
+
+#category-menu li:hover {
+    background-color: #1343dd;
+}
+
+
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+.contact h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
 }
 
-.benefits ul {
-    list-style: none;
-    padding: 0;
-}
-
-.benefits ul li {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.benefits form {
-    background-color: rgba(255, 255, 255, 0.8); /* Ensure form background stands out */
+form {
+    background: #fff;
     padding: 2rem;
     border-radius: 10px;
-    margin-top: 2rem; /* Add space between benefits and form */
-    position: relative;
-    z-index: 10; /* Ensure it's above the background animation */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better visibility */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
 }
 
 .form-group {
-    margin-bottom: 1rem;
-    text-align: left;
+    margin-bottom: 1.5rem;
 }
 
-label {
+.form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: bold; /* Emphasize label text */
 }
 
-input {
+.form-group input,
+.form-group textarea {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 1rem;
-    font-size: 1rem; /* Make input text larger */
+    transition: border-color 0.3s ease;
 }
 
-button[type="submit"] {
-    padding: 1rem 2rem;
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff6347;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #e5533d;
+}
+
+/* Additional Contact Section */
+.additional-contact {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.additional-contact h3 {
+    margin-bottom: 1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.social-media img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer-content {
+    background-color: #333;
+    color: #ff6347;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content p, .footer-content a {
+    margin: 0.5rem 0;
+}
+
+.footer-content a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.newsletter {
+    margin-top: 1rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 1rem;
+}
+
+.newsletter button {
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     border: none;
     background-color: #ff6347;
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease; /* Add transform for hover effect */
-    font-size: 1rem; /* Make button text larger */
+    margin-left: 0.5rem;
 }
 
-button[type="submit"]:hover {
+.newsletter button:hover {
     background-color: #e5533d;
-    transform: scale(1.05); /* Slightly enlarge on hover */
+} 
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Benefits Details */
-.benefits-details {
-    margin-top: 2rem;
-    text-align: left;
+footer {
+    margin-top: auto;
 }
 
-.benefits-details h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #333;
+        width: 100%;
+    }
+
+    nav ul.nav-open {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .contact {
+        padding: 1rem;
+    }
 }
 
-.benefits-details p {
-    margin-bottom: 1rem;
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 /* Base styles for navigation */
 .nav-container {
@@ -286,7 +420,3 @@ main {
     padding: 0 10px;
     box-sizing: border-box;
 }
-
-.benefits-details ul {
-    list-style: disc[_{{{CITATION{{{_1{](https://github.com/Barito2/arkademy/tree/652b129ec7ef6458e19343b13624d57995a6f53b/6a%2Findex.php)[_{{{CITATION{{{_2{](https://github.com/DeveloperGlucosa/cidVid/tree/6fb73be2fa8de0a822fa74989efb5d4de3df2288/resources%2Fviews%2Flayouts%2Fguest.blade.php)[_{{{CITATION{{{_3{](https://github.com/Bruno-2Ln/Portfolio/tree/760fe662397278a06a305f9c6f83bbf9fe06012e/index.php)[_{{{CITATION{{{_4{](https://github.com/Mariamike/SubjectAllocation/tree/9f93252c6f4b66a5960753e80471f69223d55df6/register.php)[_{{{CITATION{{{_5{](https://github.com/alexandrastoica/conference-app/tree/236467b7dcda46889c3ac4a766e4ad44acdea6c0/pages%2Flogin.php)
-        

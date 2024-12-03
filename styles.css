@@ -10,7 +10,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #333;
+    background: linear-gradient(to right, #333, #555);
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -79,11 +79,11 @@ body {
     background-color: #e5533d;
 }
 
-.hamburger-menu {
+hamburger-menu {
     position: relative;
     display: inline-block;
 }
-
+     
 .hamburger {
     display: inline-block;
     cursor: pointer;
@@ -115,8 +115,8 @@ body {
 #category-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Ensure the menu appears below the button */
-    right: -88px; /* Align to the right edge */
+    top: 100; /* Ensure the menu appears below the button */
+    right: 0; /* Align to the right edge */
     background-color: #444;
     color: white;
     min-width: 200px; /* Adjust width if needed */
@@ -125,21 +125,20 @@ body {
 }
 
 #category-menu.show {
-    display: contents;
+    display: block;
 }
 
 #category-menu li {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: right;
+    text-align: left;
     cursor: pointer;
 }
 
 #category-menu li:hover {
     background-color: #555;
 }
-
 
 /* Hero Section */
  .hero { 
@@ -219,7 +218,35 @@ section h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-item:hover, .article-item:hover, .event-item:hover {
+.shop-item {
+    display: block;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CSS-SHOP, .shop-item {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }    
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.news-item:hover, .article-item:hover, .event-item:hover, .shop-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
@@ -231,31 +258,32 @@ section h2 {
     margin-right: 1rem;
 }
 
-.news-content, .article-content, .event-content {
+.news-content, .article-content, .event-content, .CSS-SHOP {
     flex: 1;
 }
 
-.news-content h3, .article-content h3, .event-content h3 {
+.news-content h3, .article-content h3, .event-content h3, .CSS-SHOP h3{
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.news-content p, .article-content p, .event-content p {
+.news-content p, .article-content p, .event-content p, .CSS-SHOP p {
     margin-bottom: 0.5rem;
 }
 
-.news-content a, .article-content a, .event-content a {
+.news-content a, .article-content a, .event-content a, .CSS-SHOP a {
     color: #ff6347;
     text-decoration: none;
 }
 
-.news-content a:hover, .article-content a:hover, .event-content a:hover {
+.news-content a:hover, .article-content a:hover, .event-content a:hover, .CSS-SHOP a:hover {
     text-decoration: underline;
 }
 
+
 /* Footer */
 .footer-content {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 2rem;
@@ -298,7 +326,7 @@ section h2 {
 
 .newsletter button:hover {
     background-color: #e5533d;
-}
+} 
 
 /* Advanced Animations */
 @keyframes fadeIn {

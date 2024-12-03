@@ -2,44 +2,74 @@ document.addEventListener('DOMContentLoaded', () => {
     // GSAP and ScrollMagic Animations
     const controller = new ScrollMagic.Controller();
 
-    const elementsToAnimate = document.querySelectorAll('.benefits h2, .benefits ul li, .form-group');
-    
-    elementsToAnimate.forEach(element => {
+    document.querySelectorAll('.event, .resource, .form-group').forEach((element, index) => {
+        const tl = gsap.timeline();
+        tl.fromTo(element, {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1, delay: index * 0.3});
+        tl.to(element.querySelector('label'), {color: '#ff6347', duration: 0.5, yoyo: true, repeat: 1});
+
         new ScrollMagic.Scene({
             triggerElement: element,
-            triggerHook: 0.9,
-            reverse: false
+            triggerHook: 0.9
         })
-        .setTween(gsap.from(element, {opacity: 0, y: 50, duration: 1}))
+        .setTween(tl)
         .addTo(controller);
     });
 
-    // Form Validation and Submission
-    const membershipForm = document.getElementById('membershipForm');
-    membershipForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const year = document.getElementById('year').value;
-
-        if (name && email && year) {
-            alert(`Thank you for joining us, ${name}!`);
-            membershipForm.reset();
-        } else {
-            alert('Please fill in all fields.');
-        }
+    // Social Media Icons Animation
+    document.querySelectorAll('.social-media img').forEach((img, index) => {
+        gsap.fromTo(img, {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1, delay: index * 0.3});
     });
 
-    // Background Animation without Three.js
-    const backgroundAnimation = document.querySelector('.css-background-animation');
-    backgroundAnimation.style.animation = 'gradientAnimation 10s ease infinite';
-
-    // Adding an additional simple effect to the buttons on hover
-    const submitButton = document.querySelector('button[type="submit"]');
-    submitButton.addEventListener('mouseover', () => {
-        gsap.to(submitButton, { scale: 1.1, duration: 0.3 });
-    });
-    submitButton.addEventListener('mouseout', () => {
-        gsap.to(submitButton, { scale: 1, duration: 0.3 });
-    });
+    // Form Animation
+    const form = document.querySelector('#contactForm');
+    const formTl = gsap.timeline();
+    formTl.fromTo(form, {opacity: 0, scale: 0.8}, {opacity: 1, scale: 1, duration: 1, ease: 'back.out(1.7)'});
+    new ScrollMagic.Scene({
+        triggerElement: form,
+        triggerHook: 0.7
+    })
+    .setTween(formTl)
+    .addTo(controller);
 });
+// Hamburger Menu Animation
+const hamburgerButton = document.getElementById('hamburger-button');
+const navMenu = document.querySelector('.nav-menu');  // You're not using this, but it's in the original code
+const categoryMenu = document.getElementById('category-menu'); // Or document.querySelector('.category-menu')
+
+// Check if categoryMenu exists before adding event listener
+if (categoryMenu) {
+  hamburgerButton.addEventListener('click', () => {
+      categoryMenu.classList.toggle('show');
+      hamburgerButton.classList.toggle('active');
+  });
+} else {
+  console.error("Element with ID 'category-menu' not found.");
+  // Consider alternative action, e.g., showing a warning message to the user
+}
+
+ document.addEventListener('DOMContentLoaded', () => {
+     const hamburger = document.querySelector('.hamburger-menu');
+     const navMenu = document.querySelector('.nav-menu');
+ 
+     hamburger.addEventListener('click', () => {
+         navMenu.classList.toggle('nav-open');
+     });
+ });
+// Responsive Design Adjustments
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+const footer = document.querySelector('footer');
+const body = document.body;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY + window.innerHeight >= body.offsetHeight) {
+        footer.style.position = 'fixed';
+        footer.style.bottom = '0';
+    } else {
+        footer.style.position = 'static';
+    }
+});    
