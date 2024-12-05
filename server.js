@@ -5,17 +5,14 @@ const path = require('path');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public'))); // To serve static files like HTML, CSS, JS
+app.use(bodyParser.json()); // Add this line to handle JSON bodies
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://albaob96:0XsCHgVe3qlmxcQg@cluster0.kp08g.mongodb.net/myDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://albaob96:0XsCHgVe3qlmxcQg@cluster0.kp08g.mongodb.net/myDatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
-// mongoose.connect('your-mongodb-atlas-connection-string', { useNewUrlParser: true, useUnifiedTopology: true });
-
-// Define Schemas and Models
 const memberSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -31,11 +28,25 @@ const eventRegistrationSchema = new mongoose.Schema({
     year: String
 });
 
+const contactSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    message: String
+});
+
+const shopSchema = new mongoose.Schema({
+    customerName: String,
+    mobileNumber: String,
+    address: String,
+    paymentMethod: String,
+    paymentDetails: mongoose.Schema.Types.Mixed, // Use Mixed type for different payment details
+    cart: Array // Add cart to store purchased items
+});
+
 const Member = mongoose.model('Member', memberSchema);
 const EventRegistration = mongoose.model('EventRegistration', eventRegistrationSchema);
-
-// Serve the HTML forms
-app.use(express.static(path.join(__dirname, 'public')));
+const Contact = mongoose.model('Contact', contactSchema);
+const ShopOrder = mongoose.model('ShopOrder', shopSchema);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -64,59 +75,72 @@ app.get('/shop', (req, res) => {
 app.get('/registration', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'registration.html'));
 });
-app.get('/terms', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'terms.html'));
-});
-app.get('/privacy', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'privacy.html'));
-});
 
 // Handle form submissions
-app.post('/submit_membership', (req, res) => {
-    const newMember = new Member({
-        name: req.body.name,
-        email: req.body.email,
-        contact: req.body.contact,
-        birthday: req.body.birthday,
-        studentId: req.body.studentId,
-        message: req.body.message
-    });
+app.post('/submit_membership', async (req, res) => {
+    try {
+        const newMember = new Member({
+            name: req.body.name,
+            email: req.body.email,
+            contact: req.body.contact,
+            birthday: req.body.birthday,
+            studentId: req.body.studentId,
+            message: req.body.message
+        });
 
-    newMember.save((err) => {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send('Successfully saved member information!');
-        }
-    });
+        await newMember.save();
+        res.status(200).send('Successfully saved member information!');
+    } catch (err) {
+        res.status(500).send('Error saving member information.');
+    }
 });
 
-app.post('/submit_contact', (req, res) => {
-    const newContact = {
-        name: req.body.name,
-        email: req.body.email,
-        message: req.body.message
-    };
+app.post('/submit_contact', async (req, res) => {
+    try {
+        const newContact = new Contact({
+            name: req.body.name,
+            email: req.body.email,
+            message: req.body.message
+        });
 
-    // Here you would save newContact to the database or handle it as needed
-    // For now, we will just respond back
-    res.send('Successfully received your message!');
+        await newContact.save();
+        res.status(200).send('Successfully received your message!');
+    } catch (err) {
+        res.status(500).send('Error processing your message.');
+    }
 });
 
-app.post('/submit_registration', (req, res) => {
-    const newRegistration = new EventRegistration({
-        name: req.body.name,
-        email: req.body.email,
-        year: req.body.year
-    });
+app.post('/submit_registration', async (req, res) => {
+    try {
+        const newRegistration = new EventRegistration({
+            name: req.body.name,
+            email: req.body.email,
+            year: req.body.year
+        });
 
-    newRegistration.save((err) => {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send('Successfully registered for the event!');
-        }
-    });
+        await newRegistration.save();
+        res.status(200).send('Successfully registered for the event!');
+    } catch (err) {
+        res.status(500).send('Error registering for the event.');
+    }
+});
+
+app.post('/submit_shop', async (req, res) => {
+    try {
+        const newOrder = new ShopOrder({
+            customerName: req.body.customerName,
+            mobileNumber: req.body.mobileNumber,
+            address: req.body.address,
+            paymentMethod: req.body.paymentMethod,
+            paymentDetails: req.body.paymentDetails,
+            cart: req.body.cart // Save cart items
+        });
+
+        await newOrder.save();
+        res.status(200).send({ success: true, message: 'Order placed successfully!' });
+    } catch (err) {
+        res.status(500).send({ success: false, message: 'Error placing order.', error: err });
+    }
 });
 
 app.listen(3000, () => {

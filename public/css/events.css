@@ -122,7 +122,22 @@ section h2 {
     transition: background 0.3s ease;
 }
 
+
 .highlight-event button:hover {
+    background-color: #e5533d;
+}
+
+
+.upcoming-events button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+}
+
+.upcoming-events button:hover{
     background-color: #e5533d;
 }
 

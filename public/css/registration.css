@@ -31,41 +31,66 @@ header {
     padding: 0 2rem;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+
+hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+     
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
 }
 
-nav ul li {
-    margin: 0 10px;
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+    transition: all 0.3s;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background 0.3s ease, color 0.3s ease;
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
 }
 
-nav ul li a:hover {
-    background: #ff6347;
-    color: #fff;
-    border-radius: 4px;
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
 }
 
-.hamburger-menu {
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+#category-menu {
     display: none;
-    flex-direction: column;
+    position: absolute;
+    top: 100; /* Ensure the menu appears below the button */
+    right: 0; /* Align to the right edge */
+    background-color: #444;
+    color: white;
+    min-width: 200px; /* Adjust width if needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure it overlays other content */
+}
+
+#category-menu.show {
+    display: block;
+}
+
+#category-menu li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
     cursor: pointer;
 }
 
-.hamburger-menu .line {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    margin: 3px 0;
-    transition: transform 0.3s ease;
+#category-menu li:hover {
+    background-color: #555;
 }
 
 /* Registration Section */

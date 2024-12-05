@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryMenu = document.getElementById('category-menu');
     const hamburgerButton = document.getElementById('hamburger-button');
     const pagination = document.getElementById('pagination');
+    const paymentMethodSelect = document.getElementById('paymentMethod');
+    const paymentDetailsContainer = document.getElementById('payment-details-container');
 
     let cart = [];
     let currentPage = 1;
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         paginatedProducts.forEach((product, index) => {
             const productCard = document.createElement('div');
             productCard.classList.add('product-card', 'animate__animated', 'animate__fadeInUp');
-            productCard.style.animationDelay = `${index * 0.2}s`; // Slightly slower animation
+            productCard.style.animationDelay = `${index * 0.2}s`;
             productCard.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <div class="product-info">
@@ -121,29 +123,47 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutSection.classList.remove('show');
     });
 
-    document.getElementById('checkout-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Payment submitted!');
-        cart = [];
-        displayCart();
-        checkoutSection.classList.remove('show');
+    paymentMethodSelect.addEventListener('change', () => {
+        updatePaymentDetails(paymentMethodSelect.value);
     });
 
-    searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredProducts = products.filter(product =>
-            product.name.toLowerCase().includes(searchTerm) ||
-            product.category.toLowerCase().includes(searchTerm)
-        );
-        currentPage = 1; // Reset to first page when searching
-        displayProducts(filteredProducts);
-    });
-
-    hamburgerButton.addEventListener('click', () => {
-        categoryMenu.classList.toggle('show');
-        hamburgerButton.classList.toggle('active');
-    });
-
+    function updatePaymentDetails(paymentMethod) {
+        paymentDetailsContainer.innerHTML = '';
+        if (paymentMethod === 'paypal') {
+            paymentDetailsContainer.innerHTML = `
+                <div class="form-group">
+                    <label for="paypalEmail">PayPal Email</label>
+                    <input type="email" id="paypalEmail" name="paymentDetails[paypalEmail]" placeholder="PayPal Email" required>
+                </div>
+            `;
+        } else if (paymentMethod === 'credit-card') {
+            paymentDetailsContainer.innerHTML = `
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="paymentDetails[cardNumber]" placeholder="Card Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" name="paymentDetails[expiryDate]" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="paymentDetails[cvv]" placeholder="CVV" required>
+                </div>
+            `;
+        } else if (paymentMethod === 'mobile-money') {
+            paymentDetailsContainer.innerHTML = `
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="text" id="mobileNumber" name="paymentDetails[mobileNumber]" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="networkProvider">Network Provider</label>
+                    <input type="text" id="networkProvider" name="paymentDetails[networkProvider]" placeholder="Network Provider" required>
+                </div>
+            `;
+        }
+    }
     function filterByCategory(category) {
         const filteredProducts = products.filter(product => product.category === category);
         currentPage = 1; // Reset to first page when filtering
@@ -182,6 +202,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('form[action="/submit_shop"]').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {};
+
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        data.cart = cart; // Adding cart items to the data
+
+        fetch('/submit_shop', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+          .then(result => {
+              if (result.success) {
+                  alert('Payment submitted!');
+                  cart = [];
+                  displayCart();
+                  checkoutSection.classList.remove('show');
+              } else {
+                  alert('Error submitting payment!');
+              }
+          });
+    });
+
     // Toggle Cart Menu
     const cartToggleBtn = document.querySelector('.header .cart-button');
     const cart = document.querySelector('.cart');
@@ -202,12 +252,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Define the viewAllProducts function
     function viewAllProducts() {
-        // Add your logic to display all products here
         console.log('View all products');
     }
 
-    // Make the function accessible globally
     window.viewAllProducts = viewAllProducts;
 });
+// Hamburger Menu Animation
+const hamburgerButton = document.getElementById('hamburger-button');
+const navMenu = document.querySelector('.nav-menu');  // You're not using this, but it's in the original code
+const categoryMenu = document.getElementById('category-menu'); // Or document.querySelector('.category-menu')
+
+// Check if categoryMenu exists before adding event listener
+if (categoryMenu) {
+  hamburgerButton.addEventListener('click', () => {
+      categoryMenu.classList.toggle('show');
+      hamburgerButton.classList.toggle('active');
+  });
+} else {
+  console.error("Element with ID 'category-menu' not found.");
+  // Consider alternative action, e.g., showing a warning message to the user
+}
+
+ document.addEventListener('DOMContentLoaded', () => {
+     const hamburger = document.querySelector('.hamburger-menu');
+     const navMenu = document.querySelector('.nav-menu');
+ 
+     hamburger.addEventListener('click', () => {
+         navMenu.classList.toggle('nav-open');
+     });
+ });
+ 
