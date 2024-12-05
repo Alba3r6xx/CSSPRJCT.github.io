@@ -3,7 +3,7 @@ name: Deploy from Folder
 on:
   push:
     branches:
-      - your-branch-name
+      - main
 
 jobs:
   build:
