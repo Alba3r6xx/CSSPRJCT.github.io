@@ -35,6 +35,8 @@ const Member = mongoose.model('Member', memberSchema);
 const EventRegistration = mongoose.model('EventRegistration', eventRegistrationSchema);
 
 // Serve the HTML forms
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
