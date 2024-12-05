@@ -8,6 +8,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public'))); // To serve static files like HTML, CSS, JS
 
 // Connect to MongoDB
+mongoose.connect('mongodb+srv://albaob96:0XsCHgVe3qlmxcQg@cluster0.kp08g.mongodb.net/myDatabase?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
 // mongoose.connect('your-mongodb-atlas-connection-string', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Define Schemas and Models
@@ -115,5 +120,3 @@ app.post('/submit_registration', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on port 3000.');
 });
-
-mongoose.connect('mongodb://localhost:27017/myDatabase');
